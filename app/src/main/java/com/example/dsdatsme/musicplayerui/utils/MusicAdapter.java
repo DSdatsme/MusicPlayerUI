@@ -18,10 +18,14 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
 
     private List<MusicDatabase> musicList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView songName, artist;
+    public MusicAdapter(List<MusicDatabase> items, MyOnClickListener listener) {
 
-        public MyViewHolder(View view) {
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView songName, artist;
+
+        private MyViewHolder(View view) {
             super(view);
             songName = (TextView) view.findViewById(R.id.song_name_text_view);
             artist = (TextView) view.findViewById(R.id.artist_text_view);
@@ -41,11 +45,13 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
     public int getItemCount() {
         return musicList.size();
     }
+    private final View.OnClickListener mOnClickListener = new MyOnClickListener();
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        itemView.setOnClickListener(mOnClickListener);
         return new MyViewHolder(itemView);
 
     }
@@ -57,4 +63,10 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         holder.artist.setText(music.getArtist());
 
     }
+
+
+
+
 }
+
+
