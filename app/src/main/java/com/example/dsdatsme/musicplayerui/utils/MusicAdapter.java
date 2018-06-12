@@ -24,23 +24,8 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
     private List<MusicDatabase> musicList;
     private Context context;
 
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView songName, artist;
-        private RelativeLayout relativeLayout;
-        //private ImageView albumArt;
-
-        private MyViewHolder(View view) {
-            super(view);
-            relativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout);
-            songName = (TextView) view.findViewById(R.id.song_name_text_view);
-            artist = (TextView) view.findViewById(R.id.artist_text_view);
-            //albumArt = (ImageView) view.findViewById(R.id.album_art);
-
-        }
-    }
     //Constructor of This class
-    public MusicAdapter(List<MusicDatabase> musicList, Context context){
+    public MusicAdapter(List<MusicDatabase> musicList, Context context) {
         this.musicList = musicList;
         this.context = context;
     }
@@ -60,7 +45,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         final View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new MyViewHolder(itemView);
-
     }
 
     @Override
@@ -72,15 +56,28 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent explicitIntent = new Intent(context,PlayerActivity.class);
-                explicitIntent.putExtra("ArtistName",music.getArtist());
-                explicitIntent.putExtra("SongName",music.getSong());
+                Intent explicitIntent = new Intent(context, PlayerActivity.class);
+                explicitIntent.putExtra("ArtistName", music.getArtist());
+                explicitIntent.putExtra("SongName", music.getSong());
                 //explicitIntent.putExtra("SongURI",music.getSong_URI());
                 //explicitIntent.putExtra("AlbumArt",music.getAlbumArt());
                 context.startActivity(explicitIntent);
             }
         });
 
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        private TextView songName, artist;
+        private RelativeLayout relativeLayout;
+        //private ImageView albumArt;
+        private MyViewHolder(View view) {
+            super(view);
+            relativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout);
+            songName = (TextView) view.findViewById(R.id.song_name_text_view);
+            artist = (TextView) view.findViewById(R.id.artist_text_view);
+            //albumArt = (ImageView) view.findViewById(R.id.album_art);
+        }
     }
 }
 

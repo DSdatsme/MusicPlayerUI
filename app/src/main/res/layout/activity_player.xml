@@ -117,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="14"
             android:background="@drawable/ic_play_button"
-            android:onClick="changeButton"/>
+            android:onClick="changeButton" />
 
         <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
             android:id="@+id/previous_button"

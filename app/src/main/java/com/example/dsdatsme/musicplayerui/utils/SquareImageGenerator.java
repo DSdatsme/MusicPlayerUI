@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public class SquareImageGenerator extends  android.support.v7.widget.AppCompatImageView{
+public class SquareImageGenerator extends android.support.v7.widget.AppCompatImageView {
 
     public SquareImageGenerator(Context context) {
         super(context);
