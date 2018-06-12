@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    tools:context=".activities.PlayerActivity"
-    android:background="@color/colorPrimaryDark">
+    tools:context=".activities.PlayerActivity">
 
+    <!-- defal albm art-->
     <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
-        android:id="@+id/album_art_image_view"
+        android:id="@+id/squareImageGenerator"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/null_dimension"
+        android:layout_marginStart="@dimen/null_dimension"
         android:src="@drawable/default_music_albumart"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <!-- timer textviews-->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/mid_dimension"
+        android:layout_marginStart="@dimen/mid_dimension"
+        android:layout_marginTop="@dimen/min_spacing"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/squareImageGenerator">
+
+        <TextView
+            android:id="@+id/start_timer_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/initial_timer"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/end_timer_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/initial_timer"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@android:color/holo_red_dark"
+        android:secondaryProgressTint="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toTopOf="@+id/song_name_text_view_player_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+
+    <TextView
+        android:id="@+id/song_name_text_view_player_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/min_spacing"
+        android:layout_marginEnd="@dimen/min_spacing"
+        android:layout_marginStart="@dimen/mid_dimension"
+        android:text="@string/song_name_comes_here"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/artist_name_text_view_player_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/artist_name_text_view_player_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/min_spacing"
+        android:layout_marginStart="@dimen/mid_dimension"
+        android:text="@string/this_place_is_for_artist_name"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/descripition_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--control buttons-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/min_spacing"
+        android:layout_marginEnd="@dimen/min_spacing"
+        android:layout_marginStart="@dimen/min_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            app:srcCompat="@drawable/ic_next_button" />
+
+        <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="14"
+            android:background="@drawable/ic_play_button"
+            android:onClick="changeButton"/>
+
+        <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
+            android:id="@+id/previous_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            app:srcCompat="@drawable/ic_previous_button" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

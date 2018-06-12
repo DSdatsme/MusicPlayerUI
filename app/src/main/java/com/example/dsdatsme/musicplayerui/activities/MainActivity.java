@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
 
-        mAdapter = new MusicAdapter(musicList);
+        mAdapter = new MusicAdapter(musicList,getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

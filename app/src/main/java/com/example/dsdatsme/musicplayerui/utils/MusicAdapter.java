@@ -1,6 +1,7 @@
 package com.example.dsdatsme.musicplayerui.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -11,16 +12,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.dsdatsme.musicplayerui.R;
+import com.example.dsdatsme.musicplayerui.activities.MainActivity;
+import com.example.dsdatsme.musicplayerui.activities.PlayerActivity;
 
 import java.util.List;
 
 public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder> {
 
     private List<MusicDatabase> musicList;
+    private Context context;
 
-    public MusicAdapter(List<MusicDatabase> items, MyOnClickListener listener) {
-
-    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView songName, artist;
@@ -31,9 +32,10 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
             artist = (TextView) view.findViewById(R.id.artist_text_view);
         }
     }
-
-    public MusicAdapter(List<MusicDatabase> musicList){
+    //Constructor of This class
+    public MusicAdapter(List<MusicDatabase> musicList, Context context){
         this.musicList = musicList;
+        this.context = context;
     }
 
     @Override
@@ -45,13 +47,19 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
     public int getItemCount() {
         return musicList.size();
     }
-    private final View.OnClickListener mOnClickListener = new MyOnClickListener();
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
-        itemView.setOnClickListener(mOnClickListener);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent explicitIntent = new Intent(context,PlayerActivity.class);
+                context.startActivity(explicitIntent);
+            }
+        });
         return new MyViewHolder(itemView);
 
     }

@@ -10,7 +10,13 @@ public class SquareImageGenerator extends  android.support.v7.widget.AppCompatIm
         super(context);
     }
 
+    public SquareImageGenerator(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
 
+    public SquareImageGenerator(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
