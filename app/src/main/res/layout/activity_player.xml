@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="10"
-            app:srcCompat="@drawable/ic_next_button" />
+            app:srcCompat="@drawable/ic_previous_button" />
 
         <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
             android:id="@+id/play_button"
@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="10"
-            app:srcCompat="@drawable/ic_previous_button" />
+            app:srcCompat="@drawable/ic_next_button" />
 
     </LinearLayout>
 

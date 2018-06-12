@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="100dp">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="@dimen/mid_dimension"
+    android:background="@drawable/list_background"
+    >
 
-    <TextView
-        android:id="@+id/song_name_text_view"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/album_art"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:text="dcjivjfepcjea"
-        />
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
 
-    <TextView
-        android:id="@+id/artist_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/album_art"
-        android:layout_below="@id/song_name_text_view"
-        android:textColor="@android:color/white"
-        android:text="dcjivjfepcjea"
+        <TextView
+            android:id="@+id/song_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            />
 
-        />
+        <TextView
+            android:id="@+id/artist_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/album_art"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_marginRight="@dimen/big_margin"
+        android:layout_centerVertical="true"
+        android:src="@drawable/default_music_albumart" />
 </RelativeLayout>

@@ -7,11 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.dsdatsme.musicplayerui.R;
 
+import org.w3c.dom.Text;
+
 public class PlayerActivity extends AppCompatActivity {
     private boolean buttonState = true;
+    private TextView songName, artistName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,14 @@ public class PlayerActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        songName = (TextView) findViewById(R.id.song_name_text_view_player_activity);
+        artistName = (TextView) findViewById(R.id.artist_name_text_view_player_activity);
 
-        //Intent intent = getIntent();
+        Intent intent = getIntent();
+        String temp = (String) intent.getStringExtra("SongName");
+        songName.setText(temp);
+        temp = (String) intent.getStringExtra("ArtistName");
+        artistName.setText(temp);
         //String sum = (String) intent.getSerializableExtra("SUM");
 
 
