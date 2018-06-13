@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
+    // URI is for future prposes if you want to add song url 
     private void prepareMusicData() {
         MusicDatabase music = new MusicDatabase("Jay Sean", "Back To Love", 5);
         musicList.add(music);
