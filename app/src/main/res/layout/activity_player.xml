@@ -10,7 +10,7 @@
 
     <!-- default album art-->
     <com.example.dsdatsme.musicplayerui.utils.SquareImageGenerator
-        android:id="@+id/squareImageGenerator"
+        android:id="@+id/album_art_player_activity"
         android:layout_width="match_parent"
         android:layout_height="@dimen/null_dimension"
         android:layout_marginStart="@dimen/null_dimension"
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/squareImageGenerator">
+        app:layout_constraintTop_toBottomOf="@id/album_art_player_activity">
 
         <TextView
             android:id="@+id/start_timer_textview"

@@ -3,22 +3,23 @@ package com.example.dsdatsme.musicplayerui.utils;
 public class MusicDatabase {
     private String artist;
     private String song;
-    private int song_URI; //for song link
-    //private int albumArt; //for setting albumart
+    private int songURI; //for song link
+    private int albumArt; //for setting albumart
 
-    public MusicDatabase(String artist, String song, int song_URI) {
+    public MusicDatabase(String artist, String song, int song_URI, int albumArt) {
         this.artist = artist;
         this.song = song;
-        this.song_URI = song_URI;
+        this.songURI = song_URI;
+        this.albumArt = albumArt;
         //TODO: set album art here
     }
 
     public int getSong_URI() {
-        return song_URI;
+        return songURI;
     }
 
     public void setSong_URI(int song_URI) {
-        this.song_URI = song_URI;
+        this.songURI = songURI;
     }
 
     public String getArtist() {
@@ -37,5 +38,9 @@ public class MusicDatabase {
         this.song = song;
     }
 
-    //TODO: create albumArt getters-setters here
+    public int getAlbumArt() { return albumArt; }
+
+    public void setAlbumArt(int albumArt) { this.albumArt = albumArt; }
+
+
 }

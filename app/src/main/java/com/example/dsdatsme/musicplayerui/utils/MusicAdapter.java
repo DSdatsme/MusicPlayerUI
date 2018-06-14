@@ -3,9 +3,7 @@ package com.example.dsdatsme.musicplayerui.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.dsdatsme.musicplayerui.R;
-import com.example.dsdatsme.musicplayerui.activities.MainActivity;
 import com.example.dsdatsme.musicplayerui.activities.PlayerActivity;
 
 import java.util.List;
@@ -60,7 +57,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
                 explicitIntent.putExtra("ArtistName", music.getArtist());
                 explicitIntent.putExtra("SongName", music.getSong());
                 //explicitIntent.putExtra("SongURI",music.getSong_URI());
-                //explicitIntent.putExtra("AlbumArt",music.getAlbumArt());
+                explicitIntent.putExtra("AlbumArt",music.getAlbumArt());
                 context.startActivity(explicitIntent);
             }
         });
@@ -69,6 +66,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView songName, artist;
+        private ImageView albumArt;
         private RelativeLayout relativeLayout;
         //private ImageView albumArt;
         private MyViewHolder(View view) {
@@ -76,7 +74,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
             relativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout);
             songName = (TextView) view.findViewById(R.id.song_name_text_view);
             artist = (TextView) view.findViewById(R.id.artist_text_view);
-            //albumArt = (ImageView) view.findViewById(R.id.album_art);
+            albumArt = (ImageView) view.findViewById(R.id.album_art);
         }
     }
 }

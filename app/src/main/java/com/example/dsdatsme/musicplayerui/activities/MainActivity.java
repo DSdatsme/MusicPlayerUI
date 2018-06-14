@@ -37,34 +37,34 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
-    // URI is for future prposes if you want to add song url 
+    // URI is for future prposes if you want to add song url
     private void prepareMusicData() {
-        MusicDatabase music = new MusicDatabase("Jay Sean", "Back To Love", 5);
+        MusicDatabase music = new MusicDatabase("Jay Sean", "Back To Love", 5,R.drawable.back_to_love_album_art);
         musicList.add(music);
-        music = new MusicDatabase("One Direction", "Story of My Life", 5);
+        music = new MusicDatabase("One Direction", "Story of My Life", 5,R.drawable.story_of_my_life_album_art);
         musicList.add(music);
-        music = new MusicDatabase("Dj Snake, Bipolar Sunshine", "Middle", 5);
+
+        musicList.add(new MusicDatabase("Dj Snake, Bipolar Sunshine", "Middle", 5, R.drawable.middle_album_art));
+        music = new MusicDatabase("Ed Sheeran", "Perfect", 5,R.drawable.ed_perfect_album_art);
         musicList.add(music);
-        music = new MusicDatabase("Ed Sheeran", "Perfect", 5);
+        music = new MusicDatabase("Clean Bandit, Zara Larsson", "Symphony", 5,R.drawable.symphony_album_art);
         musicList.add(music);
-        music = new MusicDatabase("Clean Bandit, Zara Larsson", "Symphony", 5);
+        music = new MusicDatabase("Marshmello, Anne-Marie", "FRIENDS", 5,R.drawable.friends_album_art);
         musicList.add(music);
-        music = new MusicDatabase("Marshmello, Anne-Marie", "FRIENDS", 5);
-        musicList.add(music);
-        musicList.add(new MusicDatabase("David Guetta", "One Last Time", 5));
-        musicList.add(new MusicDatabase("Ariana Grande", "One Last Time", 5));
-        musicList.add(new MusicDatabase("Justin Bieber", "What DO You Mean", 5));
-        musicList.add(new MusicDatabase("Chainsmokers", "Roses", 5));
-        musicList.add(new MusicDatabase("One Direction", "Perfect", 5));
-        musicList.add(new MusicDatabase("Linkin Park", "In the end", 5));
-        musicList.add(new MusicDatabase("Akon", "Smack That", 5));
-        musicList.add(new MusicDatabase("Miley Cyrus", "Party in the USA", 5));
-        musicList.add(new MusicDatabase("Taylor Swift", "Love Story", 5));
-        musicList.add(new MusicDatabase("Enrique Iglesias", "Somebody's Me", 5));
-        musicList.add(new MusicDatabase("Neffrex", "Things are gonna get better", 5));
-        musicList.add(new MusicDatabase("Coldplay, Chainsmokers", "Something Just Like This", 5));
-        musicList.add(new MusicDatabase("Selena Gomez, Kygo", "It Ain't Me", 5));
-        musicList.add(new MusicDatabase("James Arthur", "Say You Won't Let Go", 5));
+        musicList.add(new MusicDatabase("David Guetta", "One Last Time", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Ariana Grande", "One Last Time", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Justin Bieber", "What DO You Mean", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Chainsmokers", "Roses", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("One Direction", "Perfect", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Linkin Park", "In the end", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Akon", "Smack That", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Miley Cyrus", "Party in the USA", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Taylor Swift", "Love Story", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Enrique Iglesias", "Somebody's Me", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Neffrex", "Things are gonna get better", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Coldplay, Chainsmokers", "Something Just Like This", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Selena Gomez, Kygo", "It Ain't Me", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("James Arthur", "Say You Won't Let Go", 5,R.drawable.default_music_albumart));
 
         mAdapter.notifyDataSetChanged();
     }
