@@ -6,12 +6,13 @@ public class MusicDatabase {
     private int songURI; //for song link
     private int albumArt; //for setting albumart
 
+
+
     public MusicDatabase(String artist, String song, int song_URI, int albumArt) {
         this.artist = artist;
         this.song = song;
         this.songURI = song_URI;
         this.albumArt = albumArt;
-        //TODO: set album art here
     }
 
     public int getSong_URI() {

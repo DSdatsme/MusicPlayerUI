@@ -49,7 +49,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         final MusicDatabase music = musicList.get(position);
         holder.songName.setText(music.getSong());
         holder.artist.setText(music.getArtist());
-        //holder.albumArt.setImageResource(music.getAlbumArt());
+        holder.albumArt.setImageResource(music.getAlbumArt());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

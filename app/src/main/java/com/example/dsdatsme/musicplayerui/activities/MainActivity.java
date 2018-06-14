@@ -1,5 +1,6 @@
 package com.example.dsdatsme.musicplayerui.activities;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActionBar actionBar = getSupportActionBar();
+
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mAdapter = new MusicAdapter(musicList, getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
-    // URI is for future prposes if you want to add song url
+    // URI is for future purposes if you want to add song url
     private void prepareMusicData() {
         MusicDatabase music = new MusicDatabase("Jay Sean", "Back To Love", 5,R.drawable.back_to_love_album_art);
         musicList.add(music);
@@ -55,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
         musicList.add(new MusicDatabase("Ariana Grande", "One Last Time", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("Justin Bieber", "What DO You Mean", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("Chainsmokers", "Roses", 5,R.drawable.default_music_albumart));
-        musicList.add(new MusicDatabase("One Direction", "Perfect", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("One Direction", "Perfect", 5,R.drawable.od_perdect_album_art));
         musicList.add(new MusicDatabase("Linkin Park", "In the end", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("Akon", "Smack That", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("Miley Cyrus", "Party in the USA", 5,R.drawable.default_music_albumart));
-        musicList.add(new MusicDatabase("Taylor Swift", "Love Story", 5,R.drawable.default_music_albumart));
-        musicList.add(new MusicDatabase("Enrique Iglesias", "Somebody's Me", 5,R.drawable.default_music_albumart));
-        musicList.add(new MusicDatabase("Neffrex", "Things are gonna get better", 5,R.drawable.default_music_albumart));
+        musicList.add(new MusicDatabase("Taylor Swift", "Love Story", 5,R.drawable.love_story_lbum_art));
+        musicList.add(new MusicDatabase("Enrique Iglesias", "Somebody's Me", 5,R.drawable.somebodys_me_album_art));
+        musicList.add(new MusicDatabase("Neffrex", "Things are gonna get better", 5,R.drawable.thingsaregonnagetbetter_album_art));
         musicList.add(new MusicDatabase("Coldplay, Chainsmokers", "Something Just Like This", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("Selena Gomez, Kygo", "It Ain't Me", 5,R.drawable.default_music_albumart));
         musicList.add(new MusicDatabase("James Arthur", "Say You Won't Let Go", 5,R.drawable.default_music_albumart));
