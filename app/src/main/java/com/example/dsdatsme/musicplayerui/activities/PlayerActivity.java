@@ -30,7 +30,6 @@ public class PlayerActivity extends AppCompatActivity {
         //hiding action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        //actionBar.hide();
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("Now Playing");

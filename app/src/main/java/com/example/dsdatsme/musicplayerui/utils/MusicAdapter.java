@@ -56,7 +56,7 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
                 Intent explicitIntent = new Intent(context, PlayerActivity.class);
                 explicitIntent.putExtra("ArtistName", music.getArtist());
                 explicitIntent.putExtra("SongName", music.getSong());
-                //explicitIntent.putExtra("SongURI",music.getSong_URI());
+                explicitIntent.putExtra("SongURI",music.getSong_URI());
                 explicitIntent.putExtra("AlbumArt",music.getAlbumArt());
                 context.startActivity(explicitIntent);
             }
@@ -68,7 +68,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         private TextView songName, artist;
         private ImageView albumArt;
         private RelativeLayout relativeLayout;
-        //private ImageView albumArt;
         private MyViewHolder(View view) {
             super(view);
             relativeLayout = (RelativeLayout) view.findViewById(R.id.relative_layout);
